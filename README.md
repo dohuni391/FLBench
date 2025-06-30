@@ -1,4 +1,4 @@
-# FLSimulation
+# FLBenchmark
 
 This project quantifies the local computation costs and convergence speed for a ResNet-18 model trained with Federated Averaging (FedAvg) across various client scales and datasets. The primary focus is on the compute time, ignoring network latency, to establish a baseline for training performance.
 
