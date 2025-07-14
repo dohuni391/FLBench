@@ -1,0 +1,75 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+# [project] section: Standard Python project metadata, now required.
+[project]
+name = "future-distributed-ml-system"
+version = "0.0.1"
+description = "A Flower simulation for a research project on future distributed machine learning systems."
+dependencies = [
+    "flwr[simulation]",
+    "torch",
+    "torchvision",
+    "numpy",
+    "flwr-datasets",
+    "pandas",
+    "matplotlib",
+    "seaborn",
+]
+
+# [tool.flwr.app] section: Now includes the required 'publisher'.
+[tool.flwr.app]
+publisher = "dohuni391"
+
+# [tool.flwr.app.components]: The new way to define the Server and Client Apps.
+[tool.flwr.app.components]
+serverapp = "simulation_app.server_app:app"
+clientapp = "simulation_app.client_app:app"
+
+
+# --- Federation Configurations (These remain the same) ---
+[tool.flwr.federations.mnist_10]
+run-config = { dataset = "mnist", num_clients = "10", num_rounds = "500" }
+options.num-supernodes = 10
+options.backend.client-resources = { num_cpus = 2, num_gpus = 0.25 }
+
+[tool.flwr.federations.mnist_50]
+run-config = { dataset = "mnist", num_clients = "50", num_rounds = "500" }
+options.num-supernodes = 50
+options.backend.client-resources = { num_cpus = 2, num_gpus = 0.25 }
+
+[tool.flwr.federations.mnist_100]
+run-config = { dataset = "mnist", num_clients = "100", num_rounds = "500" }
+options.num-supernodes = 100
+options.backend.client-resources = { num_cpus = 2, num_gpus = 0.25 }
+
+[tool.flwr.federations.cifar10_10]
+run-config = { dataset = "cifar10", num_clients = "10", num_rounds = "500" }
+options.num-supernodes = 10
+options.backend.client-resources = { num_cpus = 2, num_gpus = 0.25 }
+
+[tool.flwr.federations.cifar10_50]
+run-config = { dataset = "cifar10", num_clients = "50", num_rounds = "500" }
+options.num-supernodes = 50
+options.backend.client-resources = { num_cpus = 2, num_gpus = 0.25 }
+
+[tool.flwr.federations.cifar10_100]
+run-config = { dataset = "cifar10", num_clients = "100", num_rounds = "500" }
+options.num-supernodes = 100
+options.backend.client-resources = { num_cpus = 2, num_gpus = 0.25 }
+
+[tool.flwr.federations.femnist_200]
+run-config = { dataset = "femnist", num_clients = "200", num_rounds = "1200" }
+options.num-supernodes = 200
+options.backend.client-resources = { num_cpus = 2, num_gpus = 0.25 }
+
+[tool.flwr.federations.femnist_500]
+run-config = { dataset = "femnist", num_clients = "500", num_rounds = "1200" }
+options.num-supernodes = 500
+options.backend.client-resources = { num_cpus = 2, num_gpus = 0.25 }
+
+[tool.flwr.federations.femnist_1000]
+run-config = { dataset = "femnist", num_clients = "1000", num_rounds = "1200" }
+options.num-supernodes = 1000
+options.backend.client-resources = { num_cpus = 2, num_gpus = 0.25 }
