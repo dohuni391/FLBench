@@ -3,12 +3,9 @@
 # ==============================================================================
 # Script to measure local computation time for Table 1 of the plan.
 #
-# This script automates running local_timing.py for each required dataset
-# configuration. It captures the stdout from each run, parses the relevant
-# metrics, and presents a formatted Markdown summary table.
-#
-# This version is integrated with the new project structure and reuses code
-# from the `simulation_app` package.
+# This script automates running measure_local_compute.py for each required
+# dataset configuration. It captures the stdout from each run, parses the
+# relevant metrics, and presents a formatted Markdown summary table.
 #
 # Usage:
 #   ./run_table1_timing.sh
@@ -18,7 +15,7 @@
 #   (Saves the final summary to the specified file)
 #
 # Author:      dohuni391
-# Date:        2025-07-11 07:48:11 UTC
+# Date:        2025-07-15 03:37:57 UTC
 # ==============================================================================
 
 # 'set -e' ensures the script exits immediately if any command fails.
@@ -34,9 +31,10 @@ run_and_summarize() {
     # According to the plan, MNIST is used for client counts <= 100.
     # We use 100 as a representative number.
     echo "➡️  1/3: Measuring local timing for MNIST (100 clients)..." >&2
-    output_mnist=$(python local_timing.py --dataset MNIST --clients 100)
+    output_mnist=$(python measure_local_compute.py --dataset mnist --clients 100)
     samples_mnist=$(echo "$output_mnist" | grep "Samples / client" | awk '{print $4}')
-    time_mnist=$(echo "$output_mnist" | grep "Mean time" | awk '{print $8}')
+    # Updated awk command to parse the new output format (e.g., "1.2345s")
+    time_mnist=$(echo "$output_mnist" | grep "Mean time" | awk '{print $8}' | sed 's/s$//')
     echo "✅ MNIST timing complete." >&2
     echo >&2
 
@@ -44,9 +42,9 @@ run_and_summarize() {
     # According to the plan, CIFAR-10 is used for client counts <= 100.
     # We use 100 as a representative number.
     echo "➡️  2/3: Measuring local timing for CIFAR-10 (100 clients)..." >&2
-    output_cifar10=$(python local_timing.py --dataset CIFAR10 --clients 100)
+    output_cifar10=$(python measure_local_compute.py --dataset cifar10 --clients 100)
     samples_cifar10=$(echo "$output_cifar10" | grep "Samples / client" | awk '{print $4}')
-    time_cifar10=$(echo "$output_cifar10" | grep "Mean time" | awk '{print $8}')
+    time_cifar10=$(echo "$output_cifar10" | grep "Mean time" | awk '{print $8}' | sed 's/s$//')
     echo "✅ CIFAR-10 timing complete." >&2
     echo >&2
 
@@ -54,9 +52,9 @@ run_and_summarize() {
     # According to the plan, FEMNIST is used for client counts > 100.
     # We use 500 as a representative number.
     echo "➡️  3/3: Measuring local timing for FEMNIST (500 clients)..." >&2
-    output_femnist=$(python local_timing.py --dataset FEMNIST --clients 500)
+    output_femnist=$(python measure_local_compute.py --dataset femnist --clients 500)
     samples_femnist=$(echo "$output_femnist" | grep "Samples / client" | awk '{print $4}')
-    time_femnist=$(echo "$output_femnist" | grep "Mean time" | awk '{print $8}')
+    time_femnist=$(echo "$output_femnist" | grep "Mean time" | awk '{print $8}' | sed 's/s$//')
     echo "✅ FEMNIST timing complete." >&2
     echo >&2
 

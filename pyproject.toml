@@ -1,75 +1,49 @@
-[build-system]
-requires = ["setuptools", "wheel"]
-build-backend = "setuptools.build_meta"
-
-# [project] section: Standard Python project metadata, now required.
 [project]
-name = "future-distributed-ml-system"
-version = "0.0.1"
-description = "A Flower simulation for a research project on future distributed machine learning systems."
+name = "flower-cifar-example"
+version = "0.1.0"
+description = "A Flower federated learning example with PyTorch and CIFAR-10."
+authors = [{ name = "dohuni391" }]
+requires-python = ">=3.8"
 dependencies = [
     "flwr[simulation]",
     "torch",
     "torchvision",
-    "numpy",
     "flwr-datasets",
-    "pandas",
-    "matplotlib",
-    "seaborn",
 ]
 
-# [tool.flwr.app] section: Now includes the required 'publisher'.
 [tool.flwr.app]
+# Add the required publisher field
 publisher = "dohuni391"
 
-# [tool.flwr.app.components]: The new way to define the Server and Client Apps.
 [tool.flwr.app.components]
+# Define the server and client components
 serverapp = "simulation_app.server_app:app"
 clientapp = "simulation_app.client_app:app"
 
+[tool.flwr.run.config]
+# This section holds the default configuration for a run.
+# You can override these values from the command line.
+# Example: flwr run . --run-config "num_clients=50 dataset_name='mnist'"
 
-# --- Federation Configurations (These remain the same) ---
-[tool.flwr.federations.mnist_10]
-run-config = { dataset = "mnist", num_clients = "10", num_rounds = "500" }
+# --- Simulation settings ---
+num_clients = 10
+num_rounds = 3
+fraction_fit = 1.0 # Sample all clients in each round
+
+# --- Dataset and Model settings ---
+dataset_name = "cifar10" # Can be "mnist", "cifar10", or "femnist"
+batch_size = 32
+
+# --- Client-side training settings ---
+local_epochs = 5
+
+[tool.flwr.federations]
+default = "local-simulation"
+
+[tool.flwr.federations.local-simulation]
 options.num-supernodes = 10
-options.backend.client-resources = { num_cpus = 2, num_gpus = 0.25 }
 
-[tool.flwr.federations.mnist_50]
-run-config = { dataset = "mnist", num_clients = "50", num_rounds = "500" }
-options.num-supernodes = 50
-options.backend.client-resources = { num_cpus = 2, num_gpus = 0.25 }
-
-[tool.flwr.federations.mnist_100]
-run-config = { dataset = "mnist", num_clients = "100", num_rounds = "500" }
-options.num-supernodes = 100
-options.backend.client-resources = { num_cpus = 2, num_gpus = 0.25 }
-
-[tool.flwr.federations.cifar10_10]
-run-config = { dataset = "cifar10", num_clients = "10", num_rounds = "500" }
+[tool.flwr.federations.local-simulation-gpu]
 options.num-supernodes = 10
-options.backend.client-resources = { num_cpus = 2, num_gpus = 0.25 }
-
-[tool.flwr.federations.cifar10_50]
-run-config = { dataset = "cifar10", num_clients = "50", num_rounds = "500" }
-options.num-supernodes = 50
-options.backend.client-resources = { num_cpus = 2, num_gpus = 0.25 }
-
-[tool.flwr.federations.cifar10_100]
-run-config = { dataset = "cifar10", num_clients = "100", num_rounds = "500" }
-options.num-supernodes = 100
-options.backend.client-resources = { num_cpus = 2, num_gpus = 0.25 }
-
-[tool.flwr.federations.femnist_200]
-run-config = { dataset = "femnist", num_clients = "200", num_rounds = "1200" }
-options.num-supernodes = 200
-options.backend.client-resources = { num_cpus = 2, num_gpus = 0.25 }
-
-[tool.flwr.federations.femnist_500]
-run-config = { dataset = "femnist", num_clients = "500", num_rounds = "1200" }
-options.num-supernodes = 500
-options.backend.client-resources = { num_cpus = 2, num_gpus = 0.25 }
-
-[tool.flwr.federations.femnist_1000]
-run-config = { dataset = "femnist", num_clients = "1000", num_rounds = "1200" }
-options.num-supernodes = 1000
-options.backend.client-resources = { num_cpus = 2, num_gpus = 0.25 }
+options.backend.client-resources.num-cpus = 2 # each ClientApp assumes to use 2CPUs
+options.backend.client-resources.num-gpus = 0.2 # at most 5 ClientApp will run in a given GPU

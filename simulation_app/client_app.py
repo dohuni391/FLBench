@@ -1,48 +1,54 @@
 """Flower ClientApp."""
 
-import flwr as fl
+from flwr.client import ClientApp, NumPyClient
 from flwr.common import Context
-from flwr.common.typing import NDArrays, Scalar
+from .utils import *
 
-from .dataset import get_dataloaders
-from .model import get_model, get_weights, set_weights, train
+class FlowerClient(NumPyClient):
+    """Flower client implementing federated learning for a PyTorch model."""
 
-class FlowerClient(fl.client.NumPyClient):
-    """A Flower client for federated learning."""
-    def __init__(self, model, trainloader, img_key, label_key, local_epochs):
-        self.model = model
+    def __init__(self, net, trainloader, valloader, config):
+        self.net = net
         self.trainloader = trainloader
-        self.img_key = img_key
-        self.label_key = label_key
-        self.local_epochs = local_epochs
+        self.valloader = valloader
+        self.config = config
 
-    def get_parameters(self, config: dict[str, Scalar]) -> NDArrays:
-        return get_weights(self.model)
+    def fit(self, parameters, config):
+        """Train the model on the local dataset."""
+        set_weights(self.net, parameters)
+        local_epochs = config["local_epochs"]
+        train(self.net, self.trainloader, epochs=local_epochs, config=self.config)
+        return get_weights(self.net), len(self.trainloader.dataset), {}
 
-    def fit(self, parameters: NDArrays, config: dict[str, Scalar]):
-        set_weights(self.model, parameters)
-        train(self.model, self.trainloader, epochs=self.local_epochs, img_key=self.img_key, label_key=self.label_key)
-        return get_weights(self.model), len(self.trainloader.dataset), {}
+    def evaluate(self, parameters, config):
+        """Evaluate the model on the local validation set."""
+        set_weights(self.net, parameters)
+        loss, accuracy = test(self.net, self.valloader, config=self.config)
+        return float(loss), len(self.valloader.dataset), {"accuracy": float(accuracy)}
 
-def client_fn(context: Context) -> fl.client.Client:
-    """Create a Flower client instance for a given client ID."""
+
+def client_fn(context: Context):
+    """Create a Flower client instance for a given partition."""
     # Get properties from context
-    run_config = context.run_config
-    partition_id = context.partition_id
-    
-    # Extract parameters from config
-    dataset_name = str(run_config["dataset"])
-    num_clients = int(run_config["num_clients"])
-    local_epochs = int(run_config.get("local_epochs", 5))
+    partition_id = context.node_config["partition-id"]
+    num_partitions = context.run_config["num_clients"]
+    dataset_name = context.run_config["dataset_name"]
+    local_epochs = context.run_config["local_epochs"]
+    batch_size = context.run_config["batch_size"]
 
-    # Load model and data for this specific client
-    model = get_model(dataset_name)
-    trainloader, _, img_key, label_key = get_dataloaders(
-        dataset_name, partition_id, num_clients
+    # Load data partition
+    trainloader, valloader, data_config = get_dataloaders(
+        dataset_name, partition_id, num_partitions, batch_size
     )
 
-    # Return a new FlowerClient instance
-    return FlowerClient(model, trainloader, img_key, label_key, local_epochs).to_client()
+    # Load model
+    net = get_model(dataset_name, data_config["num_classes"])
 
-# The ClientApp, which `flwr run` will instantiate using the `client_fn`.
-app = fl.client.ClientApp(client_fn=client_fn)
+    # Create a single Flower client instance
+    return FlowerClient(net, trainloader, valloader, data_config).to_client()
+
+
+# Flower ClientApp
+app = ClientApp(
+    client_fn=client_fn,
+)
