@@ -1,7 +1,0 @@
-usage: federated_simulation.py [-h] [--dataset {mnist,cifar10,femnist}]
-                               [--num_clients NUM_CLIENTS]
-                               [--batch_size BATCH_SIZE]
-                               [--local_epochs LOCAL_EPOCHS]
-                               [--desired_accuracy DESIRED_ACCURACY]
-                               [--max_rounds MAX_ROUNDS]
-federated_simulation.py: error: unrecognized arguments: --fraction_fit 1.0 --fraction_evaluate 0.5 --cpu_per_client 0.5 --gpu_per_client 0.0

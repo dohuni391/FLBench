@@ -42,6 +42,9 @@ def get_dataloader(dataset_name: str, partition_id: int, num_partitions: int, ba
     # Rename column for CIFAR-10 for consistency
     if dataset_name == "cifar10":
         partition = partition.rename_column("img", "image")
+    # Rename column for FEMNIST for consistency
+    if dataset_name == "femnist":
+        partition = partition.rename_column("character", "label")
 
     # Define transforms
     pytorch_transforms = transforms.Compose(

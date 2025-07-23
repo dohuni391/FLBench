@@ -1,0 +1,1 @@
+2025-07-22T17:25:47.458751 - cifar10 with 10 clients: 13 rounds to reach 0.9000 accuracy

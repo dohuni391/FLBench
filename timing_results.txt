@@ -1,0 +1,66 @@
+Running timing experiment for MNIST...
+Timing local computation for:
+  Dataset: mnist
+  Client partition simulation: 1 of 100 clients
+  Local epochs: 5
+  Averaging over 3 runs
+  Samples per client: 480
+  Using device: cuda:0
+
+--- Run 1/3 ---
+Run 1 elapsed time: 1.4227 seconds
+
+--- Run 2/3 ---
+Run 2 elapsed time: 1.1149 seconds
+
+--- Run 3/3 ---
+Run 3 elapsed time: 1.1187 seconds
+
+--- Results ---
+Average time over 3 runs: 1.2188 seconds
+
+----------------------------------------
+
+Running timing experiment for CIFAR-10...
+Timing local computation for:
+  Dataset: cifar10
+  Client partition simulation: 1 of 100 clients
+  Local epochs: 5
+  Averaging over 3 runs
+  Samples per client: 400
+  Using device: cuda:0
+
+--- Run 1/3 ---
+Run 1 elapsed time: 1.3660 seconds
+
+--- Run 2/3 ---
+Run 2 elapsed time: 1.0258 seconds
+
+--- Run 3/3 ---
+Run 3 elapsed time: 1.0214 seconds
+
+--- Results ---
+Average time over 3 runs: 1.1377 seconds
+
+----------------------------------------
+
+Running timing experiment for FEMNIST...
+Timing local computation for:
+  Dataset: femnist
+  Client partition simulation: 1 of 200 clients
+  Local epochs: 5
+  Averaging over 3 runs
+  Samples per client: 3257
+  Using device: cuda:0
+
+--- Run 1/3 ---
+Run 1 elapsed time: 7.9952 seconds
+
+--- Run 2/3 ---
+Run 2 elapsed time: 7.6756 seconds
+
+--- Run 3/3 ---
+Run 3 elapsed time: 7.6706 seconds
+
+--- Results ---
+Average time over 3 runs: 7.7805 seconds

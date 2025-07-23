@@ -1,0 +1,4 @@
+2025-07-22T21:19:36.250319 - mnist with 2 clients: 2 rounds to reach 0.8000 accuracy
+2025-07-22T21:34:28.233178 - mnist with 2 clients: 2 rounds to reach 0.8000 accuracy
+2025-07-22T21:51:46.749643 - mnist with 2 clients: 2 rounds to reach 0.8000 accuracy
+2025-07-22T23:19:44.389792 - mnist with 10 clients: 2 rounds to reach 0.9000 accuracy
