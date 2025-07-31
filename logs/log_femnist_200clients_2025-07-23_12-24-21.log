@@ -1,0 +1,1522 @@
+
+================================================================================
+FEDERATED LEARNING BENCHMARK - 2025-07-23T12:24:24.231191
+Dataset: femnist
+Number of clients: 200
+Batch size: 32
+Local epochs: 5
+Desired accuracy: 0.9000
+Maximum rounds: 1200
+Device in use: GPU
+  GPU per client: 1.0
+[92mINFO [0m:      Starting Flower ServerApp, config: num_rounds=1200, no round_timeout
+[92mINFO [0m:      
+[92mINFO [0m:      [INIT]
+[92mINFO [0m:      Using initial global parameters provided by strategy
+[92mINFO [0m:      Starting evaluation of initial global parameters
+Round 0 - Server-side evaluation: loss 4.7733, accuracy 0.0034
+[92mINFO [0m:      initial parameters (loss, other metrics): 4.773250428819938, {'accuracy': 0.003444761015866778}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 1]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+[93mWARNING [0m:   No fit_metrics_aggregation_fn provided
+Round 1 - Server-side evaluation: loss 6.2154, accuracy 0.0571
+[92mINFO [0m:      fit progress: (1, 6.215422871820117, {'accuracy': 0.057148646657169525}, 1170.2145537519973)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 2]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 2 - Server-side evaluation: loss 1.5670, accuracy 0.5533
+[92mINFO [0m:      fit progress: (2, 1.567047406378804, {'accuracy': 0.5533354620032421}, 2821.4640773779975)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 3]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 3 - Server-side evaluation: loss 0.4893, accuracy 0.8365
+[92mINFO [0m:      fit progress: (3, 0.48932501365721576, {'accuracy': 0.8364690278528271}, 4141.604371752997)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 4]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 4 - Server-side evaluation: loss 0.4414, accuracy 0.8533
+[92mINFO [0m:      fit progress: (4, 0.44137637347919767, {'accuracy': 0.853348970869971}, 5816.52670273)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 5]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 5 - Server-side evaluation: loss 0.4236, accuracy 0.8614
+[92mINFO [0m:      fit progress: (5, 0.4236188459182652, {'accuracy': 0.8613560446038218}, 7080.685644498997)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 16x across cluster] (Ray deduplicates logs by default. Set RAY_DEDUP_LOGS=0 to disable log deduplication, or see https://docs.ray.io/en/master/ray-observability/user-guides/configure-logging.html#log-deduplication for more options.)[0m
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 16x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 17x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 17x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 16x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 16x across cluster][0m
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 6]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[36m(ClientAppActor pid=87077)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 8x across cluster][0m
+[36m(ClientAppActor pid=87077)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 8x across cluster][0m
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 6 - Server-side evaluation: loss 0.4158, accuracy 0.8660
+[92mINFO [0m:      fit progress: (6, 0.415828200922236, {'accuracy': 0.8660227440192563}, 8285.322391009999)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 7]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 7 - Server-side evaluation: loss 0.4081, accuracy 0.8702
+[92mINFO [0m:      fit progress: (7, 0.40806682950401707, {'accuracy': 0.8701982119172766}, 9930.419623145997)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 8]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 8 - Server-side evaluation: loss 0.4058, accuracy 0.8723
+[92mINFO [0m:      fit progress: (8, 0.4057987875376475, {'accuracy': 0.8723412094119959}, 11198.644754707999)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 9]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 9 - Server-side evaluation: loss 0.4047, accuracy 0.8742
+[92mINFO [0m:      fit progress: (9, 0.404680298629248, {'accuracy': 0.8742324507540403}, 12828.809169002998)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 10]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 10 - Server-side evaluation: loss 0.4043, accuracy 0.8755
+[92mINFO [0m:      fit progress: (10, 0.4042721103748749, {'accuracy': 0.8755464950631232}, 14089.878038866002)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 11]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 11 - Server-side evaluation: loss 0.4046, accuracy 0.8772
+[92mINFO [0m:      fit progress: (11, 0.4045545057580241, {'accuracy': 0.87716755907059}, 15343.439371210996)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 12]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 12 - Server-side evaluation: loss 0.4049, accuracy 0.8782
+[92mINFO [0m:      fit progress: (12, 0.4048581839833694, {'accuracy': 0.8782421280149334}, 16760.692188454996)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 13]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 2x across cluster][0m
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 13 - Server-side evaluation: loss 0.4052, accuracy 0.8793
+[92mINFO [0m:      fit progress: (13, 0.4051509288059134, {'accuracy': 0.8792798545954709}, 18167.540530649)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 14]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 14 - Server-side evaluation: loss 0.4074, accuracy 0.8803
+[92mINFO [0m:      fit progress: (14, 0.40742792054308186, {'accuracy': 0.8803360023579113}, 19412.686604299)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 15]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 15 - Server-side evaluation: loss 0.4058, accuracy 0.8814
+[92mINFO [0m:      fit progress: (15, 0.4058448096797646, {'accuracy': 0.8813982905143194}, 20977.394415039)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 16]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 16 - Server-side evaluation: loss 0.4108, accuracy 0.8820
+[92mINFO [0m:      fit progress: (16, 0.4107604735009445, {'accuracy': 0.8820061895171194}, 22206.730484016996)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 17]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 17 - Server-side evaluation: loss 0.4113, accuracy 0.8823
+[92mINFO [0m:      fit progress: (17, 0.4113215902015157, {'accuracy': 0.882337770791374}, 23797.725317801)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 18]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 18 - Server-side evaluation: loss 0.4128, accuracy 0.8832
+[92mINFO [0m:      fit progress: (18, 0.4127720619193214, {'accuracy': 0.8831851451589134}, 25163.173821901997)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 19]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 19 - Server-side evaluation: loss 0.4123, accuracy 0.8840
+[92mINFO [0m:      fit progress: (19, 0.41233387907055774, {'accuracy': 0.8839895367686791}, 26497.385532725995)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 20]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 20 - Server-side evaluation: loss 0.4132, accuracy 0.8847
+[92mINFO [0m:      fit progress: (20, 0.41316258945394385, {'accuracy': 0.8847202436508327}, 27934.141240794997)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 21]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 21 - Server-side evaluation: loss 0.4120, accuracy 0.8854
+[92mINFO [0m:      fit progress: (21, 0.4120319571378979, {'accuracy': 0.8854386697450508}, 29227.089759825)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 22]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 22 - Server-side evaluation: loss 0.4118, accuracy 0.8860
+[92mINFO [0m:      fit progress: (22, 0.4117661517296418, {'accuracy': 0.8859913052021418}, 30655.131669645)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 23]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 23 - Server-side evaluation: loss 0.4108, accuracy 0.8865
+[92mINFO [0m:      fit progress: (23, 0.4107830928583686, {'accuracy': 0.8864579751436852}, 31953.474236768)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 24]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 24 - Server-side evaluation: loss 0.4113, accuracy 0.8870
+[92mINFO [0m:      fit progress: (24, 0.41131389713160005, {'accuracy': 0.8870167509947439}, 33215.237888584)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 25]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 25 - Server-side evaluation: loss 0.4103, accuracy 0.8875
+[92mINFO [0m:      fit progress: (25, 0.41032059712039054, {'accuracy': 0.8875141229061256}, 34639.882295496)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 26]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 26 - Server-side evaluation: loss 0.4077, accuracy 0.8879
+[92mINFO [0m:      fit progress: (26, 0.40765517488705666, {'accuracy': 0.88792552930196}, 35881.142005265996)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 27]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 27 - Server-side evaluation: loss 0.4040, accuracy 0.8884
+[92mINFO [0m:      fit progress: (27, 0.4040080220097299, {'accuracy': 0.8883676376676327}, 37124.963584311)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 28]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 28 - Server-side evaluation: loss 0.4052, accuracy 0.8888
+[92mINFO [0m:      fit progress: (28, 0.40519121590954177, {'accuracy': 0.8888404480031439}, 38551.849707499)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 29]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 29 - Server-side evaluation: loss 0.4015, accuracy 0.8892
+[92mINFO [0m:      fit progress: (29, 0.40148363902255496, {'accuracy': 0.8892027312472368}, 39833.182651882)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 30]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 30 - Server-side evaluation: loss 0.3970, accuracy 0.8895
+[92mINFO [0m:      fit progress: (30, 0.39702024009162906, {'accuracy': 0.8894974701576853}, 41089.897370964)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 31]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[91mERROR [0m:     An exception was raised when processing a message by RayBackend
+[91mERROR [0m:     [36mray::ClientAppActor.run()[39m (pid=87076, ip=10.120.17.181, actor_id=2d95f660def54468739ec1e701000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7fc2a033b940>)
+  File "/home/dd/.local/lib/python3.10/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 504 Server Error: Gateway Timeout for url: https://huggingface.co/api/datasets/flwrlabs/femnist/paths-info/df739a2b09df2b5cc1ec93107659b9a9a8566487
+
+The above exception was the direct cause of the following exception:
+
+[36mray::ClientAppActor.run()[39m (pid=87076, ip=10.120.17.181, actor_id=2d95f660def54468739ec1e701000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7fc2a033b940>)
+  File "/home/dd/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 58, in run
+    out_message = app(message=message, context=context)
+  File "/home/dd/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 144, in __call__
+    return self._call(message, context)
+  File "/home/dd/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 128, in ffn
+    out_message = handle_legacy_message_from_msgtype(
+  File "/home/dd/.local/lib/python3.10/site-packages/flwr/client/message_handler/message_handler.py", line 96, in handle_legacy_message_from_msgtype
+    client = client_fn(context)
+  File "/home/dd/FLSimulation/FLSimulation/federated_learning.py", line 217, in client_fn
+    return FlowerClient(
+  File "/home/dd/FLSimulation/FLSimulation/federated_learning.py", line 37, in __init__
+    self.trainloader, self.valloader, _ = model_utils.get_dataloader(
+  File "/home/dd/FLSimulation/FLSimulation/utils.py", line 40, in get_dataloader
+    partition = fds.load_partition(partition_id, "train")
+  File "/home/dd/.local/lib/python3.10/site-packages/flwr_datasets/federated_dataset.py", line 177, in load_partition
+    self._prepare_dataset()
+  File "/home/dd/.local/lib/python3.10/site-packages/flwr_datasets/federated_dataset.py", line 314, in _prepare_dataset
+    self._dataset = datasets.load_dataset(
+  File "/home/dd/.local/lib/python3.10/site-packages/datasets/load.py", line 2074, in load_dataset
+    builder_instance = load_dataset_builder(
+  File "/home/dd/.local/lib/python3.10/site-packages/datasets/load.py", line 1832, in load_dataset_builder
+    builder_instance: DatasetBuilder = builder_cls(
+  File "/home/dd/.local/lib/python3.10/site-packages/datasets/builder.py", line 342, in __init__
+    self.config, self.config_id = self._create_builder_config(
+  File "/home/dd/.local/lib/python3.10/site-packages/datasets/builder.py", line 597, in _create_builder_config
+    builder_config._resolve_data_files(
+  File "/home/dd/.local/lib/python3.10/site-packages/datasets/builder.py", line 206, in _resolve_data_files
+    self.data_files = self.data_files.resolve(base_path, download_config)
+  File "/home/dd/.local/lib/python3.10/site-packages/datasets/data_files.py", line 818, in resolve
+    out[key] = data_files_patterns_list.resolve(base_path, download_config)
+  File "/home/dd/.local/lib/python3.10/site-packages/datasets/data_files.py", line 771, in resolve
+    resolve_pattern(
+  File "/home/dd/.local/lib/python3.10/site-packages/datasets/data_files.py", line 388, in resolve_pattern
+    for filepath, info in fs.glob(pattern, detail=True, **glob_kwargs).items()
+  File "/home/dd/.local/lib/python3.10/site-packages/huggingface_hub/hf_file_system.py", line 409, in glob
+    return super().glob(path, **kwargs)
+  File "/home/dd/.local/lib/python3.10/site-packages/fsspec/spec.py", line 611, in glob
+    allpaths = self.find(root, maxdepth=depth, withdirs=True, detail=True, **kwargs)
+  File "/home/dd/.local/lib/python3.10/site-packages/huggingface_hub/hf_file_system.py", line 422, in find
+    return super().find(
+  File "/home/dd/.local/lib/python3.10/site-packages/fsspec/spec.py", line 502, in find
+    out[path] = self.info(path)
+  File "/home/dd/.local/lib/python3.10/site-packages/huggingface_hub/hf_file_system.py", line 532, in info
+    paths_info = self._api.get_paths_info(
+  File "/home/dd/.local/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home/dd/.local/lib/python3.10/site-packages/huggingface_hub/hf_api.py", line 3237, in get_paths_info
+    hf_raise_for_status(response)
+  File "/home/dd/.local/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 477, in hf_raise_for_status
+    raise _format(HfHubHTTPError, str(e), response) from e
+huggingface_hub.errors.HfHubHTTPError: 504 Server Error: Gateway Timeout for url: https://huggingface.co/api/datasets/flwrlabs/femnist/paths-info/df739a2b09df2b5cc1ec93107659b9a9a8566487 (Request ID: Root=1-6881786d-161851b656cfded1708fabb8;19ce4e2f-6b5f-41b8-b1c1-94d974ca5312)
+
+The request is taking longer than expected, please try again later.
+
+The above exception was the direct cause of the following exception:
+
+[36mray::ClientAppActor.run()[39m (pid=87076, ip=10.120.17.181, actor_id=2d95f660def54468739ec1e701000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7fc2a033b940>)
+  File "/home/dd/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 64, in run
+    raise ClientAppException(str(ex)) from ex
+flwr.client.client_app.ClientAppException: 
+Exception ClientAppException occurred. Message: 504 Server Error: Gateway Timeout for url: https://huggingface.co/api/datasets/flwrlabs/femnist/paths-info/df739a2b09df2b5cc1ec93107659b9a9a8566487 (Request ID: Root=1-6881786d-161851b656cfded1708fabb8;19ce4e2f-6b5f-41b8-b1c1-94d974ca5312)
+
+The request is taking longer than expected, please try again later.
+[91mERROR [0m:     Traceback (most recent call last):
+  File "/home/dd/.local/lib/python3.10/site-packages/flwr/server/superlink/fleet/vce/vce_api.py", line 112, in worker
+    out_mssg, updated_context = backend.process_message(message, context)
+  File "/home/dd/.local/lib/python3.10/site-packages/flwr/server/superlink/fleet/vce/backend/raybackend.py", line 187, in process_message
+    raise ex
+  File "/home/dd/.local/lib/python3.10/site-packages/flwr/server/superlink/fleet/vce/backend/raybackend.py", line 175, in process_message
+    ) = self.pool.fetch_result_and_return_actor_to_pool(future)
+  File "/home/dd/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 480, in fetch_result_and_return_actor_to_pool
+    _, out_mssg, updated_context = ray.get(future)
+  File "/home/dd/.local/lib/python3.10/site-packages/ray/_private/auto_init_hook.py", line 21, in auto_init_wrapper
+    return fn(*args, **kwargs)
+  File "/home/dd/.local/lib/python3.10/site-packages/ray/_private/client_mode_hook.py", line 103, in wrapper
+    return func(*args, **kwargs)
+  File "/home/dd/.local/lib/python3.10/site-packages/ray/_private/worker.py", line 2639, in get
+    values, debugger_breakpoint = worker.get_objects(object_refs, timeout=timeout)
+  File "/home/dd/.local/lib/python3.10/site-packages/ray/_private/worker.py", line 864, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(ClientAppException): [36mray::ClientAppActor.run()[39m (pid=87076, ip=10.120.17.181, actor_id=2d95f660def54468739ec1e701000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7fc2a033b940>)
+  File "/home/dd/.local/lib/python3.10/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 504 Server Error: Gateway Timeout for url: https://huggingface.co/api/datasets/flwrlabs/femnist/paths-info/df739a2b09df2b5cc1ec93107659b9a9a8566487
+
+The above exception was the direct cause of the following exception:
+
+[36mray::ClientAppActor.run()[39m (pid=87076, ip=10.120.17.181, actor_id=2d95f660def54468739ec1e701000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7fc2a033b940>)
+  File "/home/dd/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 58, in run
+    out_message = app(message=message, context=context)
+  File "/home/dd/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 144, in __call__
+    return self._call(message, context)
+  File "/home/dd/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 128, in ffn
+    out_message = handle_legacy_message_from_msgtype(
+  File "/home/dd/.local/lib/python3.10/site-packages/flwr/client/message_handler/message_handler.py", line 96, in handle_legacy_message_from_msgtype
+    client = client_fn(context)
+  File "/home/dd/FLSimulation/FLSimulation/federated_learning.py", line 217, in client_fn
+    return FlowerClient(
+  File "/home/dd/FLSimulation/FLSimulation/federated_learning.py", line 37, in __init__
+    self.trainloader, self.valloader, _ = model_utils.get_dataloader(
+  File "/home/dd/FLSimulation/FLSimulation/utils.py", line 40, in get_dataloader
+    partition = fds.load_partition(partition_id, "train")
+  File "/home/dd/.local/lib/python3.10/site-packages/flwr_datasets/federated_dataset.py", line 177, in load_partition
+    self._prepare_dataset()
+  File "/home/dd/.local/lib/python3.10/site-packages/flwr_datasets/federated_dataset.py", line 314, in _prepare_dataset
+    self._dataset = datasets.load_dataset(
+  File "/home/dd/.local/lib/python3.10/site-packages/datasets/load.py", line 2074, in load_dataset
+    builder_instance = load_dataset_builder(
+  File "/home/dd/.local/lib/python3.10/site-packages/datasets/load.py", line 1832, in load_dataset_builder
+    builder_instance: DatasetBuilder = builder_cls(
+  File "/home/dd/.local/lib/python3.10/site-packages/datasets/builder.py", line 342, in __init__
+    self.config, self.config_id = self._create_builder_config(
+  File "/home/dd/.local/lib/python3.10/site-packages/datasets/builder.py", line 597, in _create_builder_config
+    builder_config._resolve_data_files(
+  File "/home/dd/.local/lib/python3.10/site-packages/datasets/builder.py", line 206, in _resolve_data_files
+    self.data_files = self.data_files.resolve(base_path, download_config)
+  File "/home/dd/.local/lib/python3.10/site-packages/datasets/data_files.py", line 818, in resolve
+    out[key] = data_files_patterns_list.resolve(base_path, download_config)
+  File "/home/dd/.local/lib/python3.10/site-packages/datasets/data_files.py", line 771, in resolve
+    resolve_pattern(
+  File "/home/dd/.local/lib/python3.10/site-packages/datasets/data_files.py", line 388, in resolve_pattern
+    for filepath, info in fs.glob(pattern, detail=True, **glob_kwargs).items()
+  File "/home/dd/.local/lib/python3.10/site-packages/huggingface_hub/hf_file_system.py", line 409, in glob
+    return super().glob(path, **kwargs)
+  File "/home/dd/.local/lib/python3.10/site-packages/fsspec/spec.py", line 611, in glob
+    allpaths = self.find(root, maxdepth=depth, withdirs=True, detail=True, **kwargs)
+  File "/home/dd/.local/lib/python3.10/site-packages/huggingface_hub/hf_file_system.py", line 422, in find
+    return super().find(
+  File "/home/dd/.local/lib/python3.10/site-packages/fsspec/spec.py", line 502, in find
+    out[path] = self.info(path)
+  File "/home/dd/.local/lib/python3.10/site-packages/huggingface_hub/hf_file_system.py", line 532, in info
+    paths_info = self._api.get_paths_info(
+  File "/home/dd/.local/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home/dd/.local/lib/python3.10/site-packages/huggingface_hub/hf_api.py", line 3237, in get_paths_info
+    hf_raise_for_status(response)
+  File "/home/dd/.local/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 477, in hf_raise_for_status
+    raise _format(HfHubHTTPError, str(e), response) from e
+huggingface_hub.errors.HfHubHTTPError: 504 Server Error: Gateway Timeout for url: https://huggingface.co/api/datasets/flwrlabs/femnist/paths-info/df739a2b09df2b5cc1ec93107659b9a9a8566487 (Request ID: Root=1-6881786d-161851b656cfded1708fabb8;19ce4e2f-6b5f-41b8-b1c1-94d974ca5312)
+
+The request is taking longer than expected, please try again later.
+
+The above exception was the direct cause of the following exception:
+
+[36mray::ClientAppActor.run()[39m (pid=87076, ip=10.120.17.181, actor_id=2d95f660def54468739ec1e701000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7fc2a033b940>)
+  File "/home/dd/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 64, in run
+    raise ClientAppException(str(ex)) from ex
+flwr.client.client_app.ClientAppException: 
+Exception ClientAppException occurred. Message: 504 Server Error: Gateway Timeout for url: https://huggingface.co/api/datasets/flwrlabs/femnist/paths-info/df739a2b09df2b5cc1ec93107659b9a9a8566487 (Request ID: Root=1-6881786d-161851b656cfded1708fabb8;19ce4e2f-6b5f-41b8-b1c1-94d974ca5312)
+
+The request is taking longer than expected, please try again later.
+
+[36m(ClientAppActor pid=87077)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87077)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 2x across cluster][0m
+[92mINFO [0m:      aggregate_fit: received 199 results and 1 failures
+Round 31 - Server-side evaluation: loss 0.3938, accuracy 0.8899
+[92mINFO [0m:      fit progress: (31, 0.3938183470595306, {'accuracy': 0.8898536130078106}, 42524.651109328)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 32]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 32 - Server-side evaluation: loss 0.3920, accuracy 0.8904
+[92mINFO [0m:      fit progress: (32, 0.39199636481447997, {'accuracy': 0.8903816868890309}, 43765.679477457)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 33]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 33 - Server-side evaluation: loss 0.3870, accuracy 0.8908
+[92mINFO [0m:      fit progress: (33, 0.387044721267832, {'accuracy': 0.8907501105270914}, 45355.45557429199)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 34]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 34 - Server-side evaluation: loss 0.3849, accuracy 0.8913
+[92mINFO [0m:      fit progress: (34, 0.38491019680611205, {'accuracy': 0.891290465196247}, 46587.224811210996)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 35]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 35 - Server-side evaluation: loss 0.3789, accuracy 0.8914
+[92mINFO [0m:      fit progress: (35, 0.3788973151040145, {'accuracy': 0.8914378346514712}, 47818.343783303004)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 36]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 36 - Server-side evaluation: loss 0.3784, accuracy 0.8919
+[92mINFO [0m:      fit progress: (36, 0.3784101226174937, {'accuracy': 0.8919167853809501}, 49443.27353959299)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 37]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 37 - Server-side evaluation: loss 0.3718, accuracy 0.8919
+[92mINFO [0m:      fit progress: (37, 0.3718391607495387, {'accuracy': 0.8918922238050794}, 50722.167173576)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 38]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 38 - Server-side evaluation: loss 0.3705, accuracy 0.8920
+[92mINFO [0m:      fit progress: (38, 0.3704848300532048, {'accuracy': 0.8920395932603036}, 52478.401858307)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 39]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 39 - Server-side evaluation: loss 0.3725, accuracy 0.8924
+[92mINFO [0m:      fit progress: (39, 0.37251466609892564, {'accuracy': 0.8924264380802672}, 53714.289265543994)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 40]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 40 - Server-side evaluation: loss 0.3691, accuracy 0.8925
+[92mINFO [0m:      fit progress: (40, 0.36907585887805594, {'accuracy': 0.8925124035958147}, 54986.401738397995)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 41]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 41 - Server-side evaluation: loss 0.3688, accuracy 0.8931
+[92mINFO [0m:      fit progress: (41, 0.368826785787285, {'accuracy': 0.8930527582649703}, 56588.714161376)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 42]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 42 - Server-side evaluation: loss 0.3674, accuracy 0.8933
+[92mINFO [0m:      fit progress: (42, 0.3674111409010347, {'accuracy': 0.8933352163874834}, 57934.130257818004)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 43]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 43 - Server-side evaluation: loss 0.3673, accuracy 0.8935
+[92mINFO [0m:      fit progress: (43, 0.36726268024663195, {'accuracy': 0.8935439897823845}, 59183.422338088)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 44]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 44 - Server-side evaluation: loss 0.3632, accuracy 0.8938
+[92mINFO [0m:      fit progress: (44, 0.363231499749739, {'accuracy': 0.8938018863290269}, 60822.115758490996)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 45]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 45 - Server-side evaluation: loss 0.3632, accuracy 0.8944
+[92mINFO [0m:      fit progress: (45, 0.3631836396300788, {'accuracy': 0.8943668025740531}, 62061.550378746004)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 46]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 46 - Server-side evaluation: loss 0.3674, accuracy 0.8948
+[92mINFO [0m:      fit progress: (46, 0.3673678961592545, {'accuracy': 0.8947782089698875}, 63675.232594354995)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 47]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 47 - Server-side evaluation: loss 0.3634, accuracy 0.8948
+[92mINFO [0m:      fit progress: (47, 0.3634179557259204, {'accuracy': 0.8947597877879845}, 64940.566181389004)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 48]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 48 - Server-side evaluation: loss 0.3596, accuracy 0.8950
+[92mINFO [0m:      fit progress: (48, 0.35964094977597166, {'accuracy': 0.8949747015768532}, 66198.113865104)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 49]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[36m(ClientAppActor pid=87077)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub
+[36m(ClientAppActor pid=87077)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).
+[36m(ClientAppActor pid=87077)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub
+[36m(ClientAppActor pid=87077)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).
+[36m(ClientAppActor pid=87077)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub
+[36m(ClientAppActor pid=87077)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).
+[36m(ClientAppActor pid=87077)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub
+[36m(ClientAppActor pid=87077)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).
+[36m(ClientAppActor pid=87077)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub
+[36m(ClientAppActor pid=87077)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).
+[36m(ClientAppActor pid=87077)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub
+[36m(ClientAppActor pid=87077)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).
+[36m(ClientAppActor pid=87077)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87077)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87077)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87077)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87077)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87077)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87077)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87077)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).
+[36m(ClientAppActor pid=87077)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub
+[36m(ClientAppActor pid=87077)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).
+[36m(ClientAppActor pid=87077)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub
+[36m(ClientAppActor pid=87077)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub
+Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).
+Round 49 - Server-side evaluation: loss 0.3641, accuracy 0.8956
+[92mINFO [0m:      fit progress: (49, 0.3640827819982211, {'accuracy': 0.8956071621555239}, 67399.868983597)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).
+[36m(ClientAppActor pid=87077)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub
+[36m(ClientAppActor pid=87077)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).
+[36m(ClientAppActor pid=87077)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 15x across cluster][0m
+[36m(ClientAppActor pid=87077)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 15x across cluster][0m
+[36m(ClientAppActor pid=87077)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 16x across cluster][0m
+[36m(ClientAppActor pid=87077)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 16x across cluster][0m
+[36m(ClientAppActor pid=87077)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 16x across cluster][0m
+[36m(ClientAppActor pid=87077)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 16x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 15x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 15x across cluster][0m
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 50]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[36m(ClientAppActor pid=87077)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 12x across cluster][0m
+[36m(ClientAppActor pid=87077)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 12x across cluster][0m
+[36m(ClientAppActor pid=87077)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87077)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87077)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87077)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87077)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87077)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87077)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87077)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87077)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87077)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87077)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87077)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87077)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87077)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 2x across cluster][0m
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 50 - Server-side evaluation: loss 0.3661, accuracy 0.8955
+[92mINFO [0m:      fit progress: (50, 0.3660586601852353, {'accuracy': 0.8955211966399764}, 68519.733344257)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[91mERROR [0m:     An exception was raised when processing a message by RayBackend
+[91mERROR [0m:     [36mray::ClientAppActor.run()[39m (pid=87077, ip=10.120.17.181, actor_id=cadda5a21f938322ea8504fb01000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7ff158727940>)
+  File "/home/dd/.local/lib/python3.10/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://huggingface.co/api/datasets/flwrlabs/femnist/paths-info/df739a2b09df2b5cc1ec93107659b9a9a8566487
+
+The above exception was the direct cause of the following exception:
+
+[36mray::ClientAppActor.run()[39m (pid=87077, ip=10.120.17.181, actor_id=cadda5a21f938322ea8504fb01000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7ff158727940>)
+  File "/home/dd/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 58, in run
+    out_message = app(message=message, context=context)
+  File "/home/dd/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 144, in __call__
+    return self._call(message, context)
+  File "/home/dd/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 128, in ffn
+    out_message = handle_legacy_message_from_msgtype(
+  File "/home/dd/.local/lib/python3.10/site-packages/flwr/client/message_handler/message_handler.py", line 96, in handle_legacy_message_from_msgtype
+    client = client_fn(context)
+  File "/home/dd/FLSimulation/FLSimulation/federated_learning.py", line 217, in client_fn
+    return FlowerClient(
+  File "/home/dd/FLSimulation/FLSimulation/federated_learning.py", line 37, in __init__
+    self.trainloader, self.valloader, _ = model_utils.get_dataloader(
+  File "/home/dd/FLSimulation/FLSimulation/utils.py", line 40, in get_dataloader
+    partition = fds.load_partition(partition_id, "train")
+  File "/home/dd/.local/lib/python3.10/site-packages/flwr_datasets/federated_dataset.py", line 177, in load_partition
+    self._prepare_dataset()
+  File "/home/dd/.local/lib/python3.10/site-packages/flwr_datasets/federated_dataset.py", line 314, in _prepare_dataset
+    self._dataset = datasets.load_dataset(
+  File "/home/dd/.local/lib/python3.10/site-packages/datasets/load.py", line 2074, in load_dataset
+    builder_instance = load_dataset_builder(
+  File "/home/dd/.local/lib/python3.10/site-packages/datasets/load.py", line 1832, in load_dataset_builder
+    builder_instance: DatasetBuilder = builder_cls(
+  File "/home/dd/.local/lib/python3.10/site-packages/datasets/builder.py", line 342, in __init__
+    self.config, self.config_id = self._create_builder_config(
+  File "/home/dd/.local/lib/python3.10/site-packages/datasets/builder.py", line 597, in _create_builder_config
+    builder_config._resolve_data_files(
+  File "/home/dd/.local/lib/python3.10/site-packages/datasets/builder.py", line 206, in _resolve_data_files
+    self.data_files = self.data_files.resolve(base_path, download_config)
+  File "/home/dd/.local/lib/python3.10/site-packages/datasets/data_files.py", line 818, in resolve
+    out[key] = data_files_patterns_list.resolve(base_path, download_config)
+  File "/home/dd/.local/lib/python3.10/site-packages/datasets/data_files.py", line 771, in resolve
+    resolve_pattern(
+  File "/home/dd/.local/lib/python3.10/site-packages/datasets/data_files.py", line 388, in resolve_pattern
+    for filepath, info in fs.glob(pattern, detail=True, **glob_kwargs).items()
+  File "/home/dd/.local/lib/python3.10/site-packages/huggingface_hub/hf_file_system.py", line 409, in glob
+    return super().glob(path, **kwargs)
+  File "/home/dd/.local/lib/python3.10/site-packages/fsspec/spec.py", line 611, in glob
+    allpaths = self.find(root, maxdepth=depth, withdirs=True, detail=True, **kwargs)
+  File "/home/dd/.local/lib/python3.10/site-packages/huggingface_hub/hf_file_system.py", line 422, in find
+    return super().find(
+  File "/home/dd/.local/lib/python3.10/site-packages/fsspec/spec.py", line 502, in find
+    out[path] = self.info(path)
+  File "/home/dd/.local/lib/python3.10/site-packages/huggingface_hub/hf_file_system.py", line 532, in info
+    paths_info = self._api.get_paths_info(
+  File "/home/dd/.local/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home/dd/.local/lib/python3.10/site-packages/huggingface_hub/hf_api.py", line 3237, in get_paths_info
+    hf_raise_for_status(response)
+  File "/home/dd/.local/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 477, in hf_raise_for_status
+    raise _format(HfHubHTTPError, str(e), response) from e
+huggingface_hub.errors.HfHubHTTPError: 429 Client Error: Too Many Requests for url: https://huggingface.co/api/datasets/flwrlabs/femnist/paths-info/df739a2b09df2b5cc1ec93107659b9a9a8566487
+
+<!DOCTYPE html>
+<html class="" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <meta
+            name="description"
+            content="We're on a journey to advance and democratize artificial intelligence through open source and open science."
+    />
+    <meta property="fb:app_id" content="1321688464574422" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@huggingface" />
+    <meta
+            property="og:title"
+            content="Hugging Face - The AI community building the future."
+    />
+    <meta property="og:type" content="website" />
+
+    <title>Hugging Face - The AI community building the future.</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        main {
+            background-color: white;
+            min-height: 100vh;
+            padding: 7rem 1rem 8rem 1rem;
+            text-align: center;
+            font-family: Source Sans Pro, ui-sans-serif, system-ui, -apple-system,
+            BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans,
+            sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
+            Noto Color Emoji;
+        }
+
+        img {
+            width: 6rem;
+            height: 6rem;
+            margin: 0 auto 1rem;
+        }
+
+        h1 {
+            font-size: 3.75rem;
+            line-height: 1;
+            color: rgba(31, 41, 55, 1);
+            font-weight: 700;
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+
+        p, a {
+            color: rgba(107, 114, 128, 1);
+            font-size: 1.125rem;
+            line-height: 1.75rem;
+            max-width: 28rem;
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+
+        .dark main {
+            background-color: rgb(11, 15, 25);
+        }
+        .dark h1 {
+            color: rgb(209, 213, 219);
+        }
+        .dark p, .dark a {
+            color: rgb(156, 163, 175);
+        }
+    </style>
+    <script>
+        // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+        const key = "_tb_global_settings";
+        let theme = window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+        try {
+            const storageTheme = JSON.parse(window.localStorage.getItem(key)).theme;
+            if (storageTheme) {
+                theme = storageTheme === "dark" ? "dark" : "light";
+            }
+        } catch (e) {}
+        if (theme === "dark") {
+            document.documentElement.classList.add("dark");
+        } else {
+            document.documentElement.classList.remove("dark");
+        }
+    </script>
+</head>
+
+<body>
+<main>
+    <img
+            src="https://cdn-media.huggingface.co/assets/huggingface_logo.svg"
+            alt=""
+    />
+    <div>
+        <h1>429</h1>
+        <p>We had to rate limit you. If you think it's an error, upgrade to a paid <a href="https://huggingface.co/enterprise" target="_blank">Enterprise Hub</a> account and send us <a href="mailto:website@huggingface.co">an email</a></p>
+    </div>
+</main>
+</body>
+</html>
+
+The above exception was the direct cause of the following exception:
+
+[36mray::ClientAppActor.run()[39m (pid=87077, ip=10.120.17.181, actor_id=cadda5a21f938322ea8504fb01000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7ff158727940>)
+  File "/home/dd/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 64, in run
+    raise ClientAppException(str(ex)) from ex
+flwr.client.client_app.ClientAppException: 
+Exception ClientAppException occurred. Message: 429 Client Error: Too Many Requests for url: https://huggingface.co/api/datasets/flwrlabs/femnist/paths-info/df739a2b09df2b5cc1ec93107659b9a9a8566487
+
+<!DOCTYPE html>
+<html class="" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <meta
+            name="description"
+            content="We're on a journey to advance and democratize artificial intelligence through open source and open science."
+    />
+    <meta property="fb:app_id" content="1321688464574422" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@huggingface" />
+    <meta
+            property="og:title"
+            content="Hugging Face - The AI community building the future."
+    />
+    <meta property="og:type" content="website" />
+
+    <title>Hugging Face - The AI community building the future.</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        main {
+            background-color: white;
+            min-height: 100vh;
+            padding: 7rem 1rem 8rem 1rem;
+            text-align: center;
+            font-family: Source Sans Pro, ui-sans-serif, system-ui, -apple-system,
+            BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans,
+            sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
+            Noto Color Emoji;
+        }
+
+        img {
+            width: 6rem;
+            height: 6rem;
+            margin: 0 auto 1rem;
+        }
+
+        h1 {
+            font-size: 3.75rem;
+            line-height: 1;
+            color: rgba(31, 41, 55, 1);
+            font-weight: 700;
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+
+        p, a {
+            color: rgba(107, 114, 128, 1);
+            font-size: 1.125rem;
+            line-height: 1.75rem;
+            max-width: 28rem;
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+
+        .dark main {
+            background-color: rgb(11, 15, 25);
+        }
+        .dark h1 {
+            color: rgb(209, 213, 219);
+        }
+        .dark p, .dark a {
+            color: rgb(156, 163, 175);
+        }
+    </style>
+    <script>
+        // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+        const key = "_tb_global_settings";
+        let theme = window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+        try {
+            const storageTheme = JSON.parse(window.localStorage.getItem(key)).theme;
+            if (storageTheme) {
+                theme = storageTheme === "dark" ? "dark" : "light";
+            }
+        } catch (e) {}
+        if (theme === "dark") {
+            document.documentElement.classList.add("dark");
+        } else {
+            document.documentElement.classList.remove("dark");
+        }
+    </script>
+</head>
+
+<body>
+<main>
+    <img
+            src="https://cdn-media.huggingface.co/assets/huggingface_logo.svg"
+            alt=""
+    />
+    <div>
+        <h1>429</h1>
+        <p>We had to rate limit you. If you think it's an error, upgrade to a paid <a href="https://huggingface.co/enterprise" target="_blank">Enterprise Hub</a> account and send us <a href="mailto:website@huggingface.co">an email</a></p>
+    </div>
+</main>
+</body>
+</html>
+[91mERROR [0m:     Traceback (most recent call last):
+  File "/home/dd/.local/lib/python3.10/site-packages/flwr/server/superlink/fleet/vce/vce_api.py", line 112, in worker
+    out_mssg, updated_context = backend.process_message(message, context)
+  File "/home/dd/.local/lib/python3.10/site-packages/flwr/server/superlink/fleet/vce/backend/raybackend.py", line 187, in process_message
+    raise ex
+  File "/home/dd/.local/lib/python3.10/site-packages/flwr/server/superlink/fleet/vce/backend/raybackend.py", line 175, in process_message
+    ) = self.pool.fetch_result_and_return_actor_to_pool(future)
+  File "/home/dd/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 480, in fetch_result_and_return_actor_to_pool
+    _, out_mssg, updated_context = ray.get(future)
+  File "/home/dd/.local/lib/python3.10/site-packages/ray/_private/auto_init_hook.py", line 21, in auto_init_wrapper
+    return fn(*args, **kwargs)
+  File "/home/dd/.local/lib/python3.10/site-packages/ray/_private/client_mode_hook.py", line 103, in wrapper
+    return func(*args, **kwargs)
+  File "/home/dd/.local/lib/python3.10/site-packages/ray/_private/worker.py", line 2639, in get
+    values, debugger_breakpoint = worker.get_objects(object_refs, timeout=timeout)
+  File "/home/dd/.local/lib/python3.10/site-packages/ray/_private/worker.py", line 864, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(ClientAppException): [36mray::ClientAppActor.run()[39m (pid=87077, ip=10.120.17.181, actor_id=cadda5a21f938322ea8504fb01000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7ff158727940>)
+  File "/home/dd/.local/lib/python3.10/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 429 Client Error: Too Many Requests for url: https://huggingface.co/api/datasets/flwrlabs/femnist/paths-info/df739a2b09df2b5cc1ec93107659b9a9a8566487
+
+The above exception was the direct cause of the following exception:
+
+[36mray::ClientAppActor.run()[39m (pid=87077, ip=10.120.17.181, actor_id=cadda5a21f938322ea8504fb01000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7ff158727940>)
+  File "/home/dd/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 58, in run
+    out_message = app(message=message, context=context)
+  File "/home/dd/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 144, in __call__
+    return self._call(message, context)
+  File "/home/dd/.local/lib/python3.10/site-packages/flwr/client/client_app.py", line 128, in ffn
+    out_message = handle_legacy_message_from_msgtype(
+  File "/home/dd/.local/lib/python3.10/site-packages/flwr/client/message_handler/message_handler.py", line 96, in handle_legacy_message_from_msgtype
+    client = client_fn(context)
+  File "/home/dd/FLSimulation/FLSimulation/federated_learning.py", line 217, in client_fn
+    return FlowerClient(
+  File "/home/dd/FLSimulation/FLSimulation/federated_learning.py", line 37, in __init__
+    self.trainloader, self.valloader, _ = model_utils.get_dataloader(
+  File "/home/dd/FLSimulation/FLSimulation/utils.py", line 40, in get_dataloader
+    partition = fds.load_partition(partition_id, "train")
+  File "/home/dd/.local/lib/python3.10/site-packages/flwr_datasets/federated_dataset.py", line 177, in load_partition
+    self._prepare_dataset()
+  File "/home/dd/.local/lib/python3.10/site-packages/flwr_datasets/federated_dataset.py", line 314, in _prepare_dataset
+    self._dataset = datasets.load_dataset(
+  File "/home/dd/.local/lib/python3.10/site-packages/datasets/load.py", line 2074, in load_dataset
+    builder_instance = load_dataset_builder(
+  File "/home/dd/.local/lib/python3.10/site-packages/datasets/load.py", line 1832, in load_dataset_builder
+    builder_instance: DatasetBuilder = builder_cls(
+  File "/home/dd/.local/lib/python3.10/site-packages/datasets/builder.py", line 342, in __init__
+    self.config, self.config_id = self._create_builder_config(
+  File "/home/dd/.local/lib/python3.10/site-packages/datasets/builder.py", line 597, in _create_builder_config
+    builder_config._resolve_data_files(
+  File "/home/dd/.local/lib/python3.10/site-packages/datasets/builder.py", line 206, in _resolve_data_files
+    self.data_files = self.data_files.resolve(base_path, download_config)
+  File "/home/dd/.local/lib/python3.10/site-packages/datasets/data_files.py", line 818, in resolve
+    out[key] = data_files_patterns_list.resolve(base_path, download_config)
+  File "/home/dd/.local/lib/python3.10/site-packages/datasets/data_files.py", line 771, in resolve
+    resolve_pattern(
+  File "/home/dd/.local/lib/python3.10/site-packages/datasets/data_files.py", line 388, in resolve_pattern
+    for filepath, info in fs.glob(pattern, detail=True, **glob_kwargs).items()
+  File "/home/dd/.local/lib/python3.10/site-packages/huggingface_hub/hf_file_system.py", line 409, in glob
+    return super().glob(path, **kwargs)
+  File "/home/dd/.local/lib/python3.10/site-packages/fsspec/spec.py", line 611, in glob
+    allpaths = self.find(root, maxdepth=depth, withdirs=True, detail=True, **kwargs)
+  File "/home/dd/.local/lib/python3.10/site-packages/huggingface_hub/hf_file_system.py", line 422, in find
+    return super().find(
+  File "/home/dd/.local/lib/python3.10/site-packages/fsspec/spec.py", line 502, in find
+    out[path] = self.info(path)
+  File "/home/dd/.local/lib/python3.10/site-packages/huggingface_hub/hf_file_system.py", line 532, in info
+    paths_info = self._api.get_paths_info(
+  File "/home/dd/.local/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home/dd/.local/lib/python3.10/site-packages/huggingface_hub/hf_api.py", line 3237, in get_paths_info
+    hf_raise_for_status(response)
+  File "/home/dd/.local/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 477, in hf_raise_for_status
+    raise _format(HfHubHTTPError, str(e), response) from e
+huggingface_hub.errors.HfHubHTTPError: 429 Client Error: Too Many Requests for url: https://huggingface.co/api/datasets/flwrlabs/femnist/paths-info/df739a2b09df2b5cc1ec93107659b9a9a8566487
+
+<!DOCTYPE html>
+<html class="" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <meta
+            name="description"
+            content="We're on a journey to advance and democratize artificial intelligence through open source and open science."
+    />
+    <meta property="fb:app_id" content="1321688464574422" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@huggingface" />
+    <meta
+            property="og:title"
+            content="Hugging Face - The AI community building the future."
+    />
+    <meta property="og:type" content="website" />
+
+    <title>Hugging Face - The AI community building the future.</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        main {
+            background-color: white;
+            min-height: 100vh;
+            padding: 7rem 1rem 8rem 1rem;
+            text-align: center;
+            font-family: Source Sans Pro, ui-sans-serif, system-ui, -apple-system,
+            BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans,
+            sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
+            Noto Color Emoji;
+        }
+
+        img {
+            width: 6rem;
+            height: 6rem;
+            margin: 0 auto 1rem;
+        }
+
+        h1 {
+            font-size: 3.75rem;
+            line-height: 1;
+            color: rgba(31, 41, 55, 1);
+            font-weight: 700;
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+
+        p, a {
+            color: rgba(107, 114, 128, 1);
+            font-size: 1.125rem;
+            line-height: 1.75rem;
+            max-width: 28rem;
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+
+        .dark main {
+            background-color: rgb(11, 15, 25);
+        }
+        .dark h1 {
+            color: rgb(209, 213, 219);
+        }
+        .dark p, .dark a {
+            color: rgb(156, 163, 175);
+        }
+    </style>
+    <script>
+        // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+        const key = "_tb_global_settings";
+        let theme = window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+        try {
+            const storageTheme = JSON.parse(window.localStorage.getItem(key)).theme;
+            if (storageTheme) {
+                theme = storageTheme === "dark" ? "dark" : "light";
+            }
+        } catch (e) {}
+        if (theme === "dark") {
+            document.documentElement.classList.add("dark");
+        } else {
+            document.documentElement.classList.remove("dark");
+        }
+    </script>
+</head>
+
+<body>
+<main>
+    <img
+            src="https://cdn-media.huggingface.co/assets/huggingface_logo.svg"
+            alt=""
+    />
+    <div>
+        <h1>429</h1>
+        <p>We had to rate limit you. If you think it's an error, upgrade to a paid <a href="https://huggingface.co/enterprise" target="_blank">Enterprise Hub</a> account and send us <a href="mailto:website@huggingface.co">an email</a></p>
+    </div>
+</main>
+</body>
+</html>
+
+The above exception was the direct cause of the following exception:
+
+[36mray::ClientAppActor.run()[39m (pid=87077, ip=10.120.17.181, actor_id=cadda5a21f938322ea8504fb01000000, repr=<flwr.simulation.ray_transport.ray_actor.ClientAppActor object at 0x7ff158727940>)
+  File "/home/dd/.local/lib/python3.10/site-packages/flwr/simulation/ray_transport/ray_actor.py", line 64, in run
+    raise ClientAppException(str(ex)) from ex
+flwr.client.client_app.ClientAppException: 
+Exception ClientAppException occurred. Message: 429 Client Error: Too Many Requests for url: https://huggingface.co/api/datasets/flwrlabs/femnist/paths-info/df739a2b09df2b5cc1ec93107659b9a9a8566487
+
+<!DOCTYPE html>
+<html class="" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <meta
+            name="description"
+            content="We're on a journey to advance and democratize artificial intelligence through open source and open science."
+    />
+    <meta property="fb:app_id" content="1321688464574422" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@huggingface" />
+    <meta
+            property="og:title"
+            content="Hugging Face - The AI community building the future."
+    />
+    <meta property="og:type" content="website" />
+
+    <title>Hugging Face - The AI community building the future.</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        main {
+            background-color: white;
+            min-height: 100vh;
+            padding: 7rem 1rem 8rem 1rem;
+            text-align: center;
+            font-family: Source Sans Pro, ui-sans-serif, system-ui, -apple-system,
+            BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans,
+            sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
+            Noto Color Emoji;
+        }
+
+        img {
+            width: 6rem;
+            height: 6rem;
+            margin: 0 auto 1rem;
+        }
+
+        h1 {
+            font-size: 3.75rem;
+            line-height: 1;
+            color: rgba(31, 41, 55, 1);
+            font-weight: 700;
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+
+        p, a {
+            color: rgba(107, 114, 128, 1);
+            font-size: 1.125rem;
+            line-height: 1.75rem;
+            max-width: 28rem;
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+
+        .dark main {
+            background-color: rgb(11, 15, 25);
+        }
+        .dark h1 {
+            color: rgb(209, 213, 219);
+        }
+        .dark p, .dark a {
+            color: rgb(156, 163, 175);
+        }
+    </style>
+    <script>
+        // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+        const key = "_tb_global_settings";
+        let theme = window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+        try {
+            const storageTheme = JSON.parse(window.localStorage.getItem(key)).theme;
+            if (storageTheme) {
+                theme = storageTheme === "dark" ? "dark" : "light";
+            }
+        } catch (e) {}
+        if (theme === "dark") {
+            document.documentElement.classList.add("dark");
+        } else {
+            document.documentElement.classList.remove("dark");
+        }
+    </script>
+</head>
+
+<body>
+<main>
+    <img
+            src="https://cdn-media.huggingface.co/assets/huggingface_logo.svg"
+            alt=""
+    />
+    <div>
+        <h1>429</h1>
+        <p>We had to rate limit you. If you think it's an error, upgrade to a paid <a href="https://huggingface.co/enterprise" target="_blank">Enterprise Hub</a> account and send us <a href="mailto:website@huggingface.co">an email</a></p>
+    </div>
+</main>
+</body>
+</html>
+
+[36m(ClientAppActor pid=87077)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub
+[36m(ClientAppActor pid=87077)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 15x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 15x across cluster][0m
+[92mINFO [0m:      aggregate_evaluate: received 99 results and 1 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 51]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[36m(ClientAppActor pid=87077)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 16x across cluster][0m
+[36m(ClientAppActor pid=87077)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 16x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87077)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87077)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87077)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87077)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87077)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87077)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87077)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87077)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87077)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87077)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub
+[36m(ClientAppActor pid=87077)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).
+[36m(ClientAppActor pid=87077)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub
+[36m(ClientAppActor pid=87077)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).
+[36m(ClientAppActor pid=87077)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub
+[36m(ClientAppActor pid=87077)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).
+[36m(ClientAppActor pid=87077)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub
+[36m(ClientAppActor pid=87077)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).
+[36m(ClientAppActor pid=87077)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub
+[36m(ClientAppActor pid=87077)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).
+[36m(ClientAppActor pid=87077)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub
+[36m(ClientAppActor pid=87077)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).
+[36m(ClientAppActor pid=87077)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub
+[36m(ClientAppActor pid=87077)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).
+[36m(ClientAppActor pid=87077)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub
+[36m(ClientAppActor pid=87077)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).
+[36m(ClientAppActor pid=87077)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub
+[36m(ClientAppActor pid=87077)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).
+[36m(ClientAppActor pid=87077)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub
+[36m(ClientAppActor pid=87077)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).
+[36m(ClientAppActor pid=87077)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub
+[36m(ClientAppActor pid=87077)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).
+[36m(ClientAppActor pid=87077)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub
+[36m(ClientAppActor pid=87077)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).
+[36m(ClientAppActor pid=87077)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub
+[36m(ClientAppActor pid=87077)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).
+[36m(ClientAppActor pid=87077)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub
+[36m(ClientAppActor pid=87077)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).
+[36m(ClientAppActor pid=87077)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87077)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87077)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87077)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87077)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87077)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 2x across cluster][0m
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 51 - Server-side evaluation: loss 0.3669, accuracy 0.8961
+[92mINFO [0m:      fit progress: (51, 0.36694999676442946, {'accuracy': 0.896061551309132}, 69685.485499224)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 52]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 52 - Server-side evaluation: loss 0.3637, accuracy 0.8964
+[92mINFO [0m:      fit progress: (52, 0.36374521400763016, {'accuracy': 0.8963747114014835}, 71327.991288507)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 53]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 53 - Server-side evaluation: loss 0.3692, accuracy 0.8968
+[92mINFO [0m:      fit progress: (53, 0.3692393049446789, {'accuracy': 0.896822960161124}, 72600.2011636)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 54]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 16x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 16x across cluster][0m
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 54 - Server-side evaluation: loss 0.3659, accuracy 0.8971
+[92mINFO [0m:      fit progress: (54, 0.36586413036662285, {'accuracy': 0.8971238394655401}, 74206.271923815)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 55]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 55 - Server-side evaluation: loss 0.3634, accuracy 0.8971
+[92mINFO [0m:      fit progress: (55, 0.3634377370988273, {'accuracy': 0.8970931374957017}, 75492.100166058)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 56]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 56 - Server-side evaluation: loss 0.3604, accuracy 0.8977
+[92mINFO [0m:      fit progress: (56, 0.36038882123628424, {'accuracy': 0.8977071768924694}, 76742.162859277)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 57]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 57 - Server-side evaluation: loss 0.3621, accuracy 0.8977
+[92mINFO [0m:      fit progress: (57, 0.362105727873373, {'accuracy': 0.8977255980743725}, 78371.478361251)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 58]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 58 - Server-side evaluation: loss 0.3618, accuracy 0.8983
+[92mINFO [0m:      fit progress: (58, 0.3618195611783184, {'accuracy': 0.8983027951073341}, 79649.932156928)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 59]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 59 - Server-side evaluation: loss 0.3624, accuracy 0.8983
+[92mINFO [0m:      fit progress: (59, 0.36244642185106735, {'accuracy': 0.8983273566832048}, 81277.132669132)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 60]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 60 - Server-side evaluation: loss 0.3640, accuracy 0.8985
+[92mINFO [0m:      fit progress: (60, 0.363959967612503, {'accuracy': 0.8985238492901705}, 82532.702250028)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 61]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 61 - Server-side evaluation: loss 0.3608, accuracy 0.8988
+[92mINFO [0m:      fit progress: (61, 0.3607781273918958, {'accuracy': 0.8987510438669745}, 83790.075435212)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 2x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 2x across cluster][0m
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 62]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[36m(ClientAppActor pid=87076)[0m Using the latest cached version of the dataset since flwrlabs/femnist couldn't be found on the Hugging Face Hub[32m [repeated 4x across cluster][0m
+[36m(ClientAppActor pid=87076)[0m Found the latest cached dataset configuration 'default' at /home/dd/.cache/huggingface/datasets/flwrlabs___femnist/default/0.0.0/df739a2b09df2b5cc1ec93107659b9a9a8566487 (last modified on Wed Jul 23 12:43:41 2025).[32m [repeated 4x across cluster][0m
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 62 - Server-side evaluation: loss 0.3662, accuracy 0.8992
+[92mINFO [0m:      fit progress: (62, 0.3661851187074678, {'accuracy': 0.8991563098688412}, 85383.235096896)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 63]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 63 - Server-side evaluation: loss 0.3600, accuracy 0.8992
+[92mINFO [0m:      fit progress: (63, 0.3600434145034329, {'accuracy': 0.8992115734145503}, 86639.058357932)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 64]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 64 - Server-side evaluation: loss 0.3624, accuracy 0.8995
+[92mINFO [0m:      fit progress: (64, 0.3623816723467815, {'accuracy': 0.8994510487792897}, 87885.768249183)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 65]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 65 - Server-side evaluation: loss 0.3639, accuracy 0.8998
+[92mINFO [0m:      fit progress: (65, 0.36390553396689196, {'accuracy': 0.8997764896595766}, 89512.94420555)
+[92mINFO [0m:      configure_evaluate: strategy sampled 100 clients (out of 200)
+[92mINFO [0m:      aggregate_evaluate: received 100 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 66]
+[92mINFO [0m:      configure_fit: strategy sampled 200 clients (out of 200)
+[92mINFO [0m:      aggregate_fit: received 200 results and 0 failures
+Round 66 - Server-side evaluation: loss 0.3630, accuracy 0.9000
+
+================================================================================
+🎉 RESULT: Desired accuracy 0.9000 reached in 66 rounds!
+DATASET: femnist, CLIENTS: 200, LOCAL_EPOCHS: 5
+Time elapsed: 1 day, 1:14:28.129582
+================================================================================
+
+Combined accuracy plot saved to plots/femnist_200clients_accuracy_plots.png
+
+--- COMPLETE ---
+SUCCESS condition met. Terminating simulation for femnist with 200 clients.

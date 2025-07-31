@@ -1,0 +1,51 @@
+
+================================================================================
+FEDERATED LEARNING BENCHMARK - 2025-07-23T06:18:05.734353
+Dataset: mnist
+Number of clients: 10
+Batch size: 32
+Local epochs: 5
+Desired accuracy: 0.9000
+Maximum rounds: 500
+Device in use: GPU
+  GPU per client: 1.0
+[92mINFO [0m:      Starting Flower ServerApp, config: num_rounds=500, no round_timeout
+[92mINFO [0m:      
+[92mINFO [0m:      [INIT]
+[92mINFO [0m:      Using initial global parameters provided by strategy
+[92mINFO [0m:      Starting evaluation of initial global parameters
+Round 0 - Server-side evaluation: loss 3.5211, accuracy 0.0986
+[92mINFO [0m:      initial parameters (loss, other metrics): 3.5210669167836506, {'accuracy': 0.09858333333333333}
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 1]
+[92mINFO [0m:      configure_fit: strategy sampled 10 clients (out of 10)
+[92mINFO [0m:      aggregate_fit: received 10 results and 0 failures
+[93mWARNING [0m:   No fit_metrics_aggregation_fn provided
+Round 1 - Server-side evaluation: loss 5.7045, accuracy 0.1130
+[92mINFO [0m:      fit progress: (1, 5.704483392079672, {'accuracy': 0.113}, 96.82274664500437)
+[92mINFO [0m:      configure_evaluate: strategy sampled 5 clients (out of 10)
+[92mINFO [0m:      aggregate_evaluate: received 5 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 2]
+[92mINFO [0m:      configure_fit: strategy sampled 10 clients (out of 10)
+[92mINFO [0m:      aggregate_fit: received 10 results and 0 failures
+Round 2 - Server-side evaluation: loss 0.3137, accuracy 0.8968
+[92mINFO [0m:      fit progress: (2, 0.31373187685012816, {'accuracy': 0.89675}, 182.7897057060036)
+[92mINFO [0m:      configure_evaluate: strategy sampled 5 clients (out of 10)
+[92mINFO [0m:      aggregate_evaluate: received 5 results and 0 failures
+[92mINFO [0m:      
+[92mINFO [0m:      [ROUND 3]
+[92mINFO [0m:      configure_fit: strategy sampled 10 clients (out of 10)
+[92mINFO [0m:      aggregate_fit: received 10 results and 0 failures
+Round 3 - Server-side evaluation: loss 0.0284, accuracy 0.9911
+
+================================================================================
+🎉 RESULT: Desired accuracy 0.9000 reached in 3 rounds!
+DATASET: mnist, CLIENTS: 10, LOCAL_EPOCHS: 5
+Time elapsed: 0:04:49.485598
+================================================================================
+
+Combined accuracy plot saved to plots/mnist_10clients_accuracy_plots.png
+
+--- COMPLETE ---
+SUCCESS condition met. Terminating simulation for mnist with 10 clients.

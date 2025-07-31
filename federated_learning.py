@@ -8,7 +8,7 @@ from typing import Dict, List, Tuple, Optional
 import torch
 import numpy as np
 import matplotlib.pyplot as plt
-from matplotlib.ticker import MaxNLocator
+from matplotlib.ticker import MaxNLocator, FuncFormatter
 import flwr as fl
 from flwr.common import Metrics, NDArrays, Context, ndarrays_to_parameters, Parameters, FitRes
 from flwr.server.strategy import FedAvg
@@ -118,10 +118,10 @@ def evaluate_fn(
     
     loss, accuracy = model_utils.test(model, testloader)
     time_elapsed = (datetime.datetime.now() - START_TIME)
-    print(f"Round {server_round} - Server-side evaluation: loss {loss:.4f}, accuracy {accuracy:.4f}")
+    print(f"Round {server_round} at {time_elapsed.total_seconds()} seconds - Server-side evaluation: loss {loss:.4f}, accuracy {accuracy:.4f}")
     
     # Store accuracy and timestamp for visualization
-    ACCURACY_HISTORY.append((server_round, float(accuracy), time_elapsed))
+    ACCURACY_HISTORY.append((server_round, float(accuracy), time_elapsed.total_seconds()))
     
     # Check if the desired accuracy is reached
     if accuracy >= GLOBAL_ARGS.desired_accuracy and COMPLETION_ROUND is None:
@@ -141,79 +141,76 @@ def evaluate_fn(
         
         # Generate plots
         generate_plots()
-        
-        # Write result to file
-        with open(f"results_{GLOBAL_ARGS.dataset}.txt", "a") as f:
-            f.write(f"{datetime.datetime.now().isoformat()} - {GLOBAL_ARGS.dataset} with {GLOBAL_ARGS.num_clients} clients: {server_round} rounds to reach {GLOBAL_ARGS.desired_accuracy:.4f} accuracy\n")
 
         print("\n--- COMPLETE ---")
 
     return loss, {"accuracy": accuracy}
 
+def format_time(seconds, pos):
+    """Formats seconds into HH:MM:SS or MM:SS format for plot ticks."""
+    hours, remainder = divmod(int(seconds), 3600)
+    minutes, seconds = divmod(remainder, 60)
+    if hours > 0:
+        return f"{hours:02d}:{minutes:02d}:{seconds:02d}"
+    else:
+        return f"{minutes:02d}:{seconds:02d}"
 
 def generate_plots():
-    """Generate and save accuracy plots."""
+    """Generate and save accuracy plots in a single image."""
     os.makedirs("plots", exist_ok=True)
-    
+
     if not ACCURACY_HISTORY:
         return
 
     # Extract data for plotting
     rounds, accuracies, timestamps = zip(*ACCURACY_HISTORY)
 
+    # Create a figure with two subplots
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(20, 8))
+
     # --- Plot 1: Accuracy vs. Round ---
-    plt.figure(figsize=(10, 6))
-    plt.plot(rounds, accuracies, 'o-', linewidth=2, markersize=6, label='Accuracy per Round')
-    
-    plt.axhline(y=GLOBAL_ARGS.desired_accuracy, color='r', linestyle='--', 
+    ax1.plot(rounds, accuracies, 'o-', linewidth=2, markersize=6, label='Accuracy per Round')
+    ax1.axhline(y=GLOBAL_ARGS.desired_accuracy, color='r', linestyle='--',
                 label=f'Target Accuracy ({GLOBAL_ARGS.desired_accuracy:.4f})')
-    
+
     if COMPLETION_ROUND is not None:
         completion_accuracy = next((acc for r, acc, _ in ACCURACY_HISTORY if r == COMPLETION_ROUND), None)
         if completion_accuracy:
-            plt.plot(COMPLETION_ROUND, completion_accuracy, 'ro', markersize=10, 
+            ax1.plot(COMPLETION_ROUND, completion_accuracy, 'ro', markersize=10,
                      label=f'Target reached (Round {COMPLETION_ROUND})')
-    
-    plt.title(f'{GLOBAL_ARGS.dataset.upper()} - {GLOBAL_ARGS.num_clients} Clients - Accuracy vs. Round', fontsize=14)
-    plt.xlabel('Round', fontsize=12)
-    plt.ylabel('Accuracy', fontsize=12)
-    plt.grid(True, linestyle='--', alpha=0.7)
-    plt.legend()
-    plt.gca().xaxis.set_major_locator(MaxNLocator(integer=True))
-    plt.tight_layout()
-    
-    plot_path_round = f"plots/{GLOBAL_ARGS.dataset}_{GLOBAL_ARGS.num_clients}clients_accuracy_vs_round.png"
-    plt.savefig(plot_path_round, dpi=300)
-    print(f"Accuracy vs. Round plot saved to {plot_path_round}")
-    plt.close()
+
+    ax1.set_title(f'{GLOBAL_ARGS.dataset.upper()} - {GLOBAL_ARGS.num_clients} Clients - Accuracy vs. Round', fontsize=14)
+    ax1.set_xlabel('Round', fontsize=12)
+    ax1.set_ylabel('Accuracy (%)', fontsize=12)
+    ax1.grid(True, linestyle='--', alpha=0.7)
+    ax1.legend()
+    ax1.xaxis.set_major_locator(MaxNLocator(integer=True))
 
     # --- Plot 2: Accuracy vs. Timestamp ---
-    plt.figure(figsize=(10, 6))
-    plt.plot(timestamps, accuracies, 'o-', linewidth=2, markersize=6, label='Accuracy over Time')
-
-    plt.axhline(y=GLOBAL_ARGS.desired_accuracy, color='r', linestyle='--', 
+    ax2.plot(timestamps, accuracies, 'o-', linewidth=2, markersize=6, label='Accuracy over Time')
+    ax2.axhline(y=GLOBAL_ARGS.desired_accuracy, color='r', linestyle='--',
                 label=f'Target Accuracy ({GLOBAL_ARGS.desired_accuracy:.4f})')
 
     if COMPLETION_ROUND is not None:
         completion_info = next(((acc, ts) for r, acc, ts in ACCURACY_HISTORY if r == COMPLETION_ROUND), None)
         if completion_info:
             completion_accuracy, completion_timestamp = completion_info
-            plt.plot(completion_timestamp, completion_accuracy, 'ro', markersize=10, 
+            ax2.plot(completion_timestamp, completion_accuracy, 'ro', markersize=10,
                      label=f'Target reached (Round {COMPLETION_ROUND})')
 
-    plt.title(f'{GLOBAL_ARGS.dataset.upper()} - {GLOBAL_ARGS.num_clients} Clients - Accuracy vs. Time', fontsize=14)
-    plt.xlabel('Time', fontsize=12)
-    plt.ylabel('Accuracy', fontsize=12)
-    plt.grid(True, linestyle='--', alpha=0.7)
-    plt.legend()
-    plt.gcf().autofmt_xdate()  # Auto-format dates
-    plt.tight_layout()
-    
-    plot_path_time = f"plots/{GLOBAL_ARGS.dataset}_{GLOBAL_ARGS.num_clients}clients_accuracy_vs_time.png"
-    plt.savefig(plot_path_time, dpi=300)
-    print(f"Accuracy vs. Time plot saved to {plot_path_time}")
-    plt.close()
+    ax2.set_title(f'{GLOBAL_ARGS.dataset.upper()} - {GLOBAL_ARGS.num_clients} Clients - Accuracy vs. Time', fontsize=14)
+    ax2.set_xlabel('Time (MM:SS)', fontsize=12)
+    ax2.set_ylabel('Accuracy (%)', fontsize=12)
+    ax2.grid(True, linestyle='--', alpha=0.7)
+    ax2.legend()
+    ax2.xaxis.set_major_formatter(FuncFormatter(format_time))
 
+    # Adjust layout and save the combined plot
+    plt.tight_layout(pad=3.0)
+    plot_path = f"plots/{GLOBAL_ARGS.dataset}_{GLOBAL_ARGS.num_clients}clients_accuracy_plots.png"
+    plt.savefig(plot_path, dpi=300)
+    print(f"Combined accuracy plot saved to {plot_path}")
+    plt.close()
 
 def client_fn(context: Context) -> Client:
     """Create a Flower client representing a single organization."""
@@ -315,7 +312,7 @@ def main():
     parser.add_argument(
         "--gpu_per_client", 
         type=float, 
-        default=1.0,
+        default=2.0,
         help="Fraction of GPU to allocate per client"
     )
     
@@ -367,7 +364,6 @@ def main():
         )
     except Exception as e:
         print(f"Error during simulation: {e}")
-        os.system("ray stop --force")  # Make sure to stop Ray on error
     finally:
         # Print final summary
         print("\n" + "="*80)

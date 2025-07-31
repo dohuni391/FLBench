@@ -11,7 +11,16 @@ LOG_DIR="logs"
 # Create log directory if it doesn't exist
 mkdir -p "$LOG_DIR"
 
-echo "Starting Federated Learning simulations to populate Table 2..."
+# Terminate the python script's process group to ensure all child processes are killed
+echo "Killing process group for PID $pid..."
+kill -TERM -$pid 2>/dev/null
+wait $pid 2>/dev/null
+
+# Force-stop any lingering Ray processes to ensure a clean state for the next run
+echo "Cleaning up Ray instance..."
+ray stop --force
+
+echo "Starting Federated Learning simulations..."
 echo "Individual logs will be saved in the '$LOG_DIR' directory."
 
 # --- Function to run a single simulation ---
@@ -31,14 +40,7 @@ run_single_simulation() {
   # All stdout and stderr from this block will be piped to `tee`,
   # which prints to the console and appends to the specific log file.
   {
-    echo "-----------------------------------------------------------------"
-    echo "STARTING: Dataset=$dataset, Clients=$clients, MaxRounds=$max_rounds at ${timestamp} UTC"
-    echo "Full log for this run will be at: $log_file"
-    echo "-----------------------------------------------------------------"
-
     # The command to be executed.
-    # The `-u` flag for python forces unbuffered output.
-    # The `--max_rounds` is now explicitly set.
     local cmd="python -u federated_learning.py --dataset $dataset --num_clients $clients --local_epochs $local_epochs --desired_accuracy $desired_accuracy --max_rounds $max_rounds"
 
     # Execute the command within a coprocess to capture its output
@@ -53,40 +55,35 @@ run_single_simulation() {
         break
       fi
     done <&"${COPROC[0]}"
-
-    # Terminate the python script's process group to ensure all child processes are killed
-    echo "Killing process group for PID $pid..."
-    kill -TERM -$pid 2>/dev/null
-    wait $pid 2>/dev/null
-
-    # Force-stop any lingering Ray processes to ensure a clean state for the next run
-    echo "Cleaning up Ray instance..."
-    ray stop --force
-
-    echo "-----------------------------------------------------------------"
-    echo "FINISHED: Dataset=$dataset, Clients=$clients"
-    echo "-----------------------------------------------------------------"
-
   } | tee -a "$log_file" # Pipe all output from the block to the log file and console
+
+  # Terminate the python script's process group to ensure all child processes are killed
+  echo "Killing process group for PID $pid..."
+  kill -TERM -$pid 2>/dev/null
+  wait $pid 2>/dev/null
+
+  # Force-stop any lingering Ray processes to ensure a clean state for the next run
+  echo "Cleaning up Ray instance..."
+  ray stop --force
 
   sleep 5 # Brief pause to ensure all resources are fully released before the next run
 }
 
 # --- MNIST & CIFAR-10 Runs ---
 # Max rounds: 500
-max_rounds_mnist_cifar=500
-for dataset in "mnist" "cifar10"
-do
-  for clients in 10 50 100
-  do
-    run_single_simulation "$dataset" "$clients" "$max_rounds_mnist_cifar"
-  done
-done
+# max_rounds_mnist_cifar=500
+# for dataset in "mnist" "cifar10"
+# do
+#   for clients in 10 50 100
+#   do
+#     run_single_simulation "$dataset" "$clients" "$max_rounds_mnist_cifar"
+#   done
+# done
 
 # --- FEMNIST Runs ---
 # Max rounds: 1200
 max_rounds_femnist=1200
-for clients in 200 500 1000
+for clients in 500 1000
 do
   run_single_simulation "femnist" "$clients" "$max_rounds_femnist"
 done
